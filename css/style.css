@@ -1,0 +1,837 @@
+html, body, header, footer, hgroup, nav, article, section, figure,
+figcaption, h1, h2, h3, ul, li, body, div, p, img {
+    margin: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 0;
+}
+
+a.skip{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  }
+
+  a.skip:focus{
+    top:20px;
+    color: black;
+    text-decoration-style: solid;
+  }
+
+  *:focus{
+    border: 2px solid black;
+  }
+
+/**
+    Body, nav, header, and footer
+**/
+
+body{
+    font-family: "Quicksand";
+    background-image: url(../images/brick.jpg);
+    background-color: rgb(0, 0, 0);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: 100%;
+    margin: 20px;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1em;
+    border-bottom: 2px solid black;
+}
+
+header h1{
+    font-size: 4em;
+    color: black;
+    text-align: left;
+    border: 1px solid rgb(36, 104, 205);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+footer{
+    border-top: 2px solid black;
+    background-color: whitesmoke;
+    color: black;
+    padding: 50px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+  }
+
+li {
+    float: left;
+  }
+
+li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+li a:hover:not(.active) {
+    background-color: rgb(104, 154, 230);
+  }
+
+ul li.current{
+    background-color: rgb(104, 154, 230);
+  }
+li.current a{
+    text-decoration: underline;
+}
+
+/**
+    Home Page
+**/
+
+.bio{
+    display: flex;
+    /* padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 15em;
+    padding-right: 15em; */
+    font-family: "Oswald";
+    /* background: rgb(44, 14, 152); */
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.biotextbox{
+    padding: 1em;
+    color: white;
+    text-align: left;
+    align-items: center;
+}
+
+.biotextbox h1{
+    padding-bottom: .5em;
+    font-size: 4em;
+    border-bottom: 1px solid white;
+}
+
+.biotextbox p{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.mypic img{
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+/**
+    Containers, gallery, images, and text
+**/
+
+.biocontainer, .photographycontainer, .travelcontainer, .foodcontainer{
+    padding: 2em;
+}
+
+.biogallery{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(12, 5vw);
+    grid-gap: 1rem;
+}
+
+.galleryimg{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.biogallery p{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+}
+
+.pic1:hover, .pic2:hover, .pic3:hover, .pic4:hover, .pic5:hover, .pic6:hover{
+    opacity: .1;
+}
+
+.overlay1, .overlay2, .overlay3, .overlay4, .overlay5, .overlay6{
+    background-color:rgb(36, 104, 205);
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+    padding-top: 9em;
+}
+
+.gallerytext img, .gallerytext2 img, .gallerytext3 img, .travelbio img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+    min-width: 100%;
+    min-height: 100%
+}
+
+.gallerytext h1, .gallerytext2 h1, .gallerytext3 h1{
+    color: white;
+    font-size: 4em;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+}
+
+/**
+    Pictures and textbox placement on grid
+**/
+
+.gallerytext, .foodtext, .foodtext2{
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    background-color: rgb(36, 104, 205);
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.pic1, .overlay1{
+    transition: .5s ease;
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.pic2, .overlay2{
+    transition: .5s ease;
+    grid-column: 7 / span 2;
+    grid-row: 1 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.gallerytext2{
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    background-color: rgb(36, 104, 205);
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.pic3, .overlay3{
+    transition: .5s ease;
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.pic4, .overlay4{
+    transition: .5s ease;
+    grid-column: 3 / span 2;
+    grid-row: 5 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.gallerytext3{
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    background-color: rgb(36, 104, 205);
+    grid-column: 1 / span 4;
+    grid-row: 9 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.pic5, .overlay5{
+    transition: .5s ease;
+    grid-column: 5 / span 2;
+    grid-row: 9 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.pic6, .overlay6{
+    transition: .5s ease;
+    grid-column: 7 / span 2;
+    grid-row: 9 / span 4;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+/**
+    Photography Page
+**/
+
+.travelbio{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    padding: 8em;
+    background-color: rgb(44, 14, 152);
+}
+
+.travelbio p{
+    color: white;
+    font-size: 2em;
+    align-content: center;
+    z-index: 2;
+    text-align: center;
+    font-family: "Oswald";
+}
+
+.photographycontainer{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.traveltitle{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 2em;
+    padding: 0.5em;
+    text-decoration: underline;
+}
+
+.photographycontainer h2{
+    font-size: 2em;
+}
+
+.photographycontainer a:visited{
+    color: rgb(14, 111, 152);
+}
+
+.photographycontainer a:link{
+    color: rgb(44, 14, 152);
+}
+
+.photographycontainer p{
+    padding: 5px;
+}
+
+.review{
+    margin: 100px;
+    height: 450px;
+    width: 450px;
+    padding: 2em;
+    background: rgba(122, 104, 104, 0.404);
+    text-align: center;
+}
+
+.review img{
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+/**
+    Food Page
+**/
+
+/* #foodtext p{
+    color: white;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    padding: 5em;
+    font-size: 2em;
+}
+
+#foodtext2 p, #foodtext3 p{
+    color: white;
+    align-content: center;
+    position: relative;
+    padding: 5em;
+    font-size: 2em;
+} */
+
+#f2{
+    animation-delay: -3s;
+}
+
+.foodimg{
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    min-width: 100%;
+    min-height: 100%
+}
+
+.textcontainer {
+    font-style: italic;
+    text-align: center;
+    background-color: white;
+    height: 25px;
+  }
+
+
+@keyframes fade {
+    0% {opacity: .0;}
+    20% {opacity: .3;}
+    33% {opacity: .1;}
+    53% {opacity: 0;}
+}
+
+/**
+    Food Gallery
+**/
+
+.foodgallery{
+    color: white;
+    font-size: relative;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(18, 5vw);
+    grid-gap: 1.5rem;
+}
+
+.foodcontainer h1{
+    font-size: 2em;
+    padding: 10px;
+    color: white;
+}
+
+.foodcontainer p{
+    padding: 15px;
+    font-size: 2em;
+    color: white;
+}
+
+.picturecaption {
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 4;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+.filler{
+    grid-column: 5 / span 4;
+    grid-row: 1 / span 4;
+}
+
+.picturecaption2 {
+    grid-column: 1 / span 4;
+    grid-row: 5 / span 4;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+.foodvideo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    grid-column: 1 / span 4;
+    grid-row: 13 / span 4;
+}
+
+.foodtext {
+    grid-column: 5 / span 4;
+    grid-row: 10 / span 2;
+    background-color: rgb(36, 104, 205);
+  }
+
+.foodvideo2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    grid-column: 5 / span 4;
+    grid-row: 13 / span 4;
+}
+
+.foodtext2{
+    grid-column: 1 / span 4;
+    grid-row: 10 / span 2;
+    background-color: rgb(36, 104, 205);
+  }
+
+
+/**
+  Travel Page
+**/
+
+.travelgallery{
+    /* display: grid; */
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 5vw);
+    grid-gap: 1.5rem;
+}
+
+.travelcontainer h1{
+    /* font-size: 2em; */
+    padding: 10px;
+    color: white;
+}
+
+.travelcontainer p{
+    padding: 15px;
+    max-height: 5vw;
+}
+
+.travelpic1{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 4;
+    padding: 10px;
+}
+
+.travelreview1{
+    grid-column: 3 / span 4;
+    grid-row: 1 / span 4;
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic2{
+    grid-column: 7 / span 2;
+    grid-row: 5 / span 4;
+    padding: 10px;
+}
+
+.travelreview2{
+    grid-column: 3 / span 4;
+    grid-row: 5 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic3{
+    grid-column: 1 / span 2;
+    grid-row: 9 / span 4;
+    padding: 10px;
+}
+
+.travelreview3{
+    grid-column: 3 / span 4;
+    grid-row: 9 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic4{
+    grid-column: 7 / span 2;
+    grid-row: 13 / span 4;
+    padding: 10px;
+}
+
+.travelreview4{
+    grid-column: 3 / span 4;
+    grid-row: 13 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic5{
+    grid-column: 1 / span 2;
+    grid-row: 17 / span 4;
+    padding: 10px;
+}
+
+.travelreview5{
+    grid-column: 3 / span 4;
+    grid-row: 17 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic6{
+    grid-column: 7 / span 2;
+    grid-row: 21 / span 4;
+    padding: 10px;
+}
+
+.travelreview6{
+    grid-column: 3 / span 4;
+    grid-row: 21 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic7{
+    grid-column: 1 / span 2;
+    grid-row: 25 / span 4;
+    padding: 10px;
+}
+
+.travelreview7{
+    grid-column: 3 / span 4;
+    grid-row: 25 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic8{
+    grid-column: 7 / span 2;
+    grid-row: 29 / span 4;
+    padding: 10px;
+}
+
+.travelreview8{
+    grid-column: 3 / span 4;
+    grid-row: 29 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic9{
+    grid-column: 1 / span 2;
+    grid-row: 33 / span 4;
+    padding: 10px;
+}
+
+.travelreview9{
+    grid-column: 3 / span 4;
+    grid-row: 33 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+.travelpic10{
+    grid-column: 7 / span 2;
+    grid-row: 37 / span 4;
+    padding: 10px;
+}
+
+.travelreview10{
+    grid-column: 3 / span 4;
+    grid-row: 37 / span 4;
+    background: rgb(44, 14, 152);
+    background: linear-gradient(90deg, rgb(0, 20, 36) 53%, rgb(36, 104, 205) 100%);
+}
+
+
+@media screen and (min-width: 350px){
+
+    header{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bio{
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav_links{
+        padding-top: 10px;
+    }
+
+    /**
+        Home Page
+    **/
+    .biocontainer, .overlay1, .overlay2,
+    .overlay3, .overlay4, .overlay5, .overlay6{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .biocontainer img, .travelbio img, .travelcontainer img{
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+    }
+
+    .biocontainer p{
+        display: flex;
+        font-size: 100%;
+    }
+
+    .biocontainer h1{
+        font-size: 1.5em;
+    }
+
+    /**
+        Food Page
+    **/
+
+    .foodcontainer{
+        display: flex;
+    }
+
+    .foodcontainer h1{
+        font: unset;
+        padding-bottom: unset;
+        text-align: center;
+    }
+
+    .foodcontainer p{
+        display: flex;
+        overflow: hidden;
+        font-size: 100%;
+    }
+
+    .review{
+        flex-direction: column;
+        background: none;
+        display: flex;
+    }
+
+    /**
+        Travel Page
+    **/
+
+    .travelbio{
+        padding: 2em;
+    }
+    .travelbio p{
+        font-size: inherit;
+    }
+
+    .travelcontainer{
+        display: flex;
+        font-size: 2em;
+        color: white;
+        overflow: scroll;
+    }
+
+    .travelcontainer h1{
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    .travelcontainer p{
+        overflow: scroll;
+        max-height: 17vw;
+    }
+}
+
+@media screen and (min-width: 700px){
+
+    header{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bio{
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav_links{
+        padding-top: 10px;
+    }
+
+    /**
+        Home Page
+    **/
+    .biocontainer, .overlay1, .overlay2,
+    .overlay3, .overlay4, .overlay5, .overlay6{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .biocontainer img, .travelbio img, .travelcontainer img{
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+    }
+
+    .biocontainer p{
+        display: flex;
+        font-size: 100%;
+    }
+
+    .biocontainer h1{
+        font-size: 1.5em;
+    }
+
+    /**
+        Food Page
+    **/
+
+    .foodcontainer{
+        display: flex;
+    }
+
+    .foodcontainer h1{
+        font: unset;
+        padding-bottom: unset;
+        text-align: center;
+    }
+
+    .foodcontainer p{
+        display: flex;
+        overflow: hidden;
+        font-size: 100%;
+    }
+
+    .review{
+        flex-direction: column;
+    }
+
+    /**
+        Travel Page
+    **/
+
+    .travelbio{
+        padding: 2em;
+    }
+    .travelbio p{
+        font-size: inherit;
+    }
+
+    .travelcontainer{
+        display: flex;
+    }
+
+    .travelcontainer h1{
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    .travelcontainer p{
+        overflow: scroll;
+        max-height: 17vw;
+    }
+
+    .travelgallery{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(10, 5vw);
+        grid-gap: 1.5rem;
+    }
+}
